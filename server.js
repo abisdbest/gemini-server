@@ -1,21 +1,16 @@
-// Import required modules
 const express = require('express');
+const cors = require('cors');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 
-// Initialize Express app
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
-// Access your API key
-const API_KEY = "AIzaSyDVDYqvGiu1VVH7o2k9XCM5WNZUJpcQuGs";
-
-// Initialize Generative Model
-const genAI = new GoogleGenerativeAI(API_KEY);
-
-// Middleware to parse JSON bodies
+app.use(cors());
 app.use(express.json());
 
-// POST endpoint to handle incoming messages
+const API_KEY = "AIzaSyDVDYqvGiu1VVH7o2k9XCM5WNZUJpcQuGs";
+const genAI = new GoogleGenerativeAI(API_KEY);
+
 app.post('/sendMessage', async (req, res) => {
   try {
     const prompt = req.body.message;
@@ -30,7 +25,6 @@ app.post('/sendMessage', async (req, res) => {
   }
 });
 
-// Start the server
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });

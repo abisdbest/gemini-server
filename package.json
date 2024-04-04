@@ -1,0 +1,13 @@
+{
+  "name": "gemini-server",
+  "version": "1.0.0",
+  "description": "A simple Node.js server for interacting with the Gemini AI API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "@google/generative-ai": "^1.0.0"
+  }
+}

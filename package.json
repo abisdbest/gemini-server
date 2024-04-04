@@ -7,7 +7,7 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.17.1",
-    "@google/generative-ai": "^1.0.0"
+    "@google/generative-ai": "^0.5.0",
+    "express": "^4.17.1"
   }
 }
